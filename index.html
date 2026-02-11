@@ -169,13 +169,13 @@
             <div class="lg:col-span-2 space-y-8">
                 <!-- Group Configuration Sections -->
                 <div class="card-premium">
-                    <form id="project-form" class="p-6 md:p-8 space-y-8">
+                    <form id="project-form" class="px-6 py-5 md:px-8 md:pt-5 md:pb-8 space-y-8">
                         <input type="hidden" id="edit-slug-hidden">
                         
                         <!-- Section 1: Informasi Utama -->
-                        <div class="animate-up">
-                            <div class="border-b border-gray-100 pb-3 mb-5">
-                                <h3 class="font-bold text-gray-900 text-lg flex items-center gap-2 leading-tight">
+                        <div class="animate-up !mt-0">
+                            <div class="border-b border-gray-100 pb-3 mb-4">
+                                <h3 class="mt-0 font-bold text-gray-900 text-lg flex items-center gap-2 leading-tight">
                                     <span class="text-xl shrink-0">📝</span> Informasi Utama
                                 </h3>
                                 <p class="text-xs text-gray-500 mt-1">Berikan identitas yang jelas untuk project arisan Anda.</p>
@@ -334,18 +334,47 @@
                     <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Waktu Pembayaran</p>
                     <h3 id="pub-timer-dead" class="text-2xl font-bold">-- : -- : --</h3>
                 </div>
-                <div class="countdown-box p-8 text-center space-y-2 border-amber-100 bg-amber-50/20">
-                    <p class="text-[10px] font-bold text-amber-500 uppercase tracking-widest">Jadwal Kocokan</p>
-                    <h3 id="pub-timer-draw" class="text-2xl font-bold">-- : -- : --</h3>
+                <div class="w-full rounded-2xl border border-amber-100 bg-amber-50 p-8 text-center shadow-sm relative overflow-hidden">
+    <p class="text-[10px] font-bold text-amber-600 uppercase tracking-widest mb-2">Jadwal Kocokan</p>
+    <h3 id="pub-timer-draw" class="text-2xl font-bold text-gray-900 z-10 relative">-- : -- : --</h3>
+</div>
+            </div>
+            <div class="card-premium p-6 mb-8 border-blue-100 bg-blue-50/20 animate-up">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-white text-xl shadow-lg shadow-blue-100">
+                            💳
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-gray-900 uppercase tracking-tight">Informasi Pembayaran</h4>
+                            <p id="pub-rek-info" class="text-lg font-extrabold text-blue-700 mt-1 leading-tight">
+                                Memuat data rekening...
+                            </p>
+                            <p class="text-[10px] text-gray-400 font-medium mt-1 italic">*Pastikan nominal iuran sesuai dengan kesepakatan.</p>
+                        </div>
+                    </div>
+            
+                    <a id="btn-wa-confirm" href="#" target="_blank" class="flex items-center justify-center gap-3 px-6 py-4 bg-emerald-500 hover:bg-emerald-600 text-white rounded-2xl font-bold text-sm transition-all shadow-lg shadow-emerald-100">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        Kirim Bukti Bayar
+                    </a>
                 </div>
             </div>
 
-            <div class="card-premium p-8">
-                <h3 class="text-lg font-bold mb-6 text-gray-800">Status Pembayaran Anggota</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="pub-participants-list"></div>
+            <div id="pub-winners-section" class="hidden mb-10">
+                <h3 class="text-xl font-black text-gray-900 mb-6 flex items-center gap-2">🏆 Wall of Fame</h3>
+                <div id="pub-winners-list" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    </div>
+            </div>
+            
+            <div class="mt-8">
+                <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">👥 Daftar Anggota</h3>
+                <div id="pub-participants-list" class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    </div>
             </div>
         </main>
     </div>
+
 
     <!-- MODALS -->
     <div id="participant-modal" class="fixed inset-0 bg-gray-900/40 backdrop-blur-sm z-[1000] hidden flex items-center justify-center p-6">
@@ -512,47 +541,59 @@
         };
 
         const syncParticipants = (slug) => {
-            const body = document.getElementById('edit-participant-body');
-            const q = query(collection(db, "groups", slug, "participants"), orderBy("name", "asc"));
-            onSnapshot(q, (snap) => {
-                body.innerHTML = '';
-                participantsData = [];
-                snap.forEach(pSnap => {
-                    const p = pSnap.data();
-                    const pid = pSnap.id;
-                    participantsData.push({ ...p, id: pid });
+    const body = document.getElementById('edit-participant-body');
+    const q = query(collection(db, "groups", slug, "participants"), orderBy("name", "asc"));
+    
+    onSnapshot(q, (snap) => {
+        body.innerHTML = '';
+        participantsData = [];
+        
+        snap.forEach(pSnap => {
+            const p = pSnap.data();
+            const pid = pSnap.id;
+            participantsData.push({ ...p, id: pid });
 
-                    const tr = document.createElement('tr');
-                    tr.className = "border-b border-gray-50 hover:bg-gray-50 transition-all";
+            const row = document.createElement('tr');
+            
+            // LOGIKA VISUAL: Tetap bedakan pemenang agar admin tahu mereka sudah menang
+            if (p.isWinner) {
+                row.className = "bg-amber-50/30 border-b border-slate-100 transition-all";
+            } else {
+                row.className = "hover:bg-blue-50/30 border-b border-slate-100 transition-all";
+            }
+
+            row.innerHTML = `
+                <td class="px-4 py-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg ${p.isWinner ? 'bg-amber-100 text-amber-600' : 'bg-slate-100 text-slate-500'} flex items-center justify-center font-bold text-xs">
+                            ${p.isWinner ? '🏆' : p.name.charAt(0)}
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold text-slate-700">${p.name}</div>
+                            ${p.isWinner ? '<span class="text-[9px] font-black text-amber-600 uppercase tracking-tight">Sudah Pernah Menang </span>' : ''}
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-4 text-center">
+                    <span class="px-2 py-1 rounded-md text-[10px] font-bold ${p.status === 'Sudah Bayar' ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-100 text-slate-400'}">
+                        ${p.status}
+                    </span>
+                </td>
+                <td class="px-4 py-4 text-right">
+                    <button onclick="toggleStatus('${pid}', '${p.status}')" class="text-xs font-bold text-blue-600 hover:underline">
+                        Ubah Status
+                    </button>
                     
-                    const paidDate = p.paidAt ? new Date(p.paidAt.seconds * 1000).toLocaleDateString('id-ID') : '';
-                    
-                    tr.innerHTML = `
-                        <td class="px-4 py-4">
-                            <div class="text-sm font-bold text-gray-700">${p.name}</div>
-                            <div class="text-[9px] text-gray-400 font-medium">${p.paidAt ? 'Bayar: ' + paidDate : 'Belum konfirmasi'}</div>
-                        </td>
-                        <td class="px-4 py-4 text-center">
-                            <button onclick="toggleStatus('${pid}', '${p.status}')" class="badge ${p.status === 'Sudah Bayar' ? 'badge-success' : 'badge-pending'} cursor-pointer">
-                                ${p.status === 'Sudah Bayar' ? 'Sudah Bayar' : 'Belum Bayar'}
-                            </button>
-                        </td>
-                        <td class="px-4 py-4 text-center">
-                            <span class="badge ${p.isWinner ? 'badge-winner animate-pulse-gold' : 'badge-pending'}">
-                                ${p.isWinner ? '🏆 MENANG' : 'Belum'}
-                            </span>
-                        </td>
-                        <td class="px-4 py-4 text-right">
-                            <button onclick="window.deletePart('${pid}')" class="p-2 text-red-300 hover:text-red-500 transition-colors">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-                            </button>
-                        </td>
-                    `;
-                    body.appendChild(tr);
-                });
-                updateShuffleBadge();
-            });
-        };
+                    <button onclick="deleteParticipant('${pid}')" class="ml-3 text-[10px] text-red-300 hover:text-red-600">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </td>
+            `;
+            
+            body.appendChild(row);
+        });
+    });
+};
 
         window.deletePart = async (pid) => {
             try {
@@ -673,33 +714,76 @@
             document.getElementById('pub-period-badge').textContent = `Periode Saat Ini: ${g.period_value || 1} ${g.period_type || 'Bulan'}`;
             startTimers(g.deadline_day, g.draw_day);
             syncPublicParticipants(slug);
+            // Tambahkan ini di dalam fungsi initPublicPortal setelah 'const g = snap.data();'
+document.getElementById('pub-rek-info').textContent = g.rekening || 'Hubungi Admin untuk rekening.';
+
+// Update Link WhatsApp Konfirmasi
+const waNumber = g.waAdmin || '628xxx';
+const message = encodeURIComponent(`Halo Admin, saya ingin konfirmasi pembayaran untuk arisan *${g.name}* periode ini.`);
+document.getElementById('btn-wa-confirm').href = `https://wa.me/${waNumber}?text=${message}`;
         };
 
         const syncPublicParticipants = (slug) => {
-            const list = document.getElementById('pub-participants-list');
-            const q = query(collection(db, "groups", slug, "participants"), orderBy("name", "asc"));
-            onSnapshot(q, (snap) => {
-                list.innerHTML = '';
-                snap.forEach(pSnap => {
-                    const p = pSnap.data();
-                    const card = document.createElement('div');
-                    card.className = "flex items-center justify-between p-4 rounded-xl border border-gray-100 bg-gray-50/30";
-                    card.innerHTML = `
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-lg ${p.isWinner ? 'bg-amber-400 text-white shadow-lg shadow-amber-100' : 'bg-gray-200 text-gray-500'} flex items-center justify-center font-bold text-xs">
-                                ${p.isWinner ? '🏆' : p.name.charAt(0)}
-                            </div>
-                            <div>
-                                <div class="text-sm font-bold text-gray-700">${p.name}</div>
-                                ${p.isWinner ? '<div class="text-[9px] text-amber-600 font-bold uppercase tracking-tighter">WINNER</div>' : ''}
-                            </div>
+    const listWinner = document.getElementById('pub-winners-list');
+    const listAnggota = document.getElementById('pub-participants-list');
+
+    const q = query(collection(db, "groups", slug, "participants"), orderBy("name", "asc"));
+
+    onSnapshot(q, (snap) => {
+        listWinner.innerHTML = '';
+        listAnggota.innerHTML = '';
+        let hasWinner = false;
+
+        snap.forEach(doc => {
+            const p = doc.data();
+            
+            // 1. JIKA DIA PEMENANG -> Masukkan ke Wall of Fame
+            if (p.isWinner) {
+                hasWinner = true;
+                listWinner.innerHTML += `
+                    <div class="p-4 rounded-2xl border-2 border-amber-200 bg-amber-50 shadow-sm flex items-center gap-3 animate-up">
+                        <div class="text-2xl">🏆</div>
+                        <div>
+                            <div class="font-black text-amber-900">${p.name}</div>
+                            <div class="text-[10px] font-bold text-amber-600 uppercase tracking-tight">Pemenang Beruntung</div>
                         </div>
-                        <span class="badge ${p.status === 'Sudah Bayar' ? 'badge-success' : 'badge-pending'}">${p.status === 'Sudah Bayar' ? 'Sudah Bayar' : 'Belum Bayar'}</span>
-                    `;
-                    list.appendChild(card);
-                });
-            });
-        };
+                    </div>
+                `;
+            }
+
+            // 2. TAMPILKAN SEMUA (Termasuk Pemenang) di Daftar Anggota
+            // Kita modif badge-nya: Kalau sudah menang, kasih ikon piala kecil
+            const statusBadge = p.isWinner 
+                ? '<span class="px-2 py-1 rounded-md text-[10px] font-black bg-amber-100 text-amber-700">🏆 PEMENANG</span>'
+                : `<span class="px-2 py-1 rounded-md text-[10px] font-bold ${p.status === 'Sudah Bayar' ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-100 text-slate-400'}">
+                    ${p.status === 'Sudah Bayar' ? 'Sudah Bayar' : 'Belum Bayar'}
+                  </span>`;
+
+            listAnggota.innerHTML += `
+                <div class="flex items-center justify-between p-4 rounded-xl border border-gray-100 bg-white hover:shadow-md transition-all animate-up">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[10px] font-bold text-slate-500">
+                            ${p.name.charAt(0)}
+                        </div>
+                        <div class="text-sm font-bold text-gray-700">${p.name}</div>
+                    </div>
+                    ${statusBadge}
+                </div>
+            `;
+        });
+
+        // 3. PESAN KOSONG: Jika periode baru dan belum ada yang menang
+        if (!hasWinner) {
+            listWinner.innerHTML = `
+                <div class="col-span-full p-8 border-2 border-dashed border-slate-200 rounded-3xl flex flex-col items-center justify-center text-center bg-slate-50/50">
+                    <div class="text-4xl mb-3 opacity-20">🎫</div>
+                    <p class="text-sm font-bold text-slate-400 italic">Belum ada pemenang untuk periode ini</p>
+                    <p class="text-[10px] text-slate-400 mt-1 uppercase tracking-widest font-black">Nantikan kocokan berikutnya!</p>
+                </div>
+            `;
+        }
+    });
+};
 
         const startTimers = (dead, draw) => {
             const update = () => {
@@ -734,6 +818,5 @@
         };
 
     </script>
-<script type="module" src="/index.tsx"></script>
 </body>
 </html>
