@@ -1,0 +1,8 @@
+{
+  "name": "ArisanKuy SaaS - Pro Management",
+  "description": "Platform SaaS Arisan dengan Firebase Auth, Firestore, dan Storage.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

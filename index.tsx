@@ -1,0 +1,1 @@
+// Aplikasi dipindahkan ke index.html
